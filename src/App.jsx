@@ -12,7 +12,8 @@ import Register from "./components/Register";
 function App() {
   return (
     <div >
-    <Router>
+    {/* Use Vite's BASE_URL so the router works both in dev ("/") and when served from a subpath (e.g. GitHub Pages) */}
+    <Router basename={import.meta.env.BASE_URL}>
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />
